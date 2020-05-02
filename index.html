@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="shopping-list">
+    <div class="header">
+      <h2>{{ header.toUpperCase() }}</h2>
+      <button v-if="state === 'default'" 
+        v-on:click="changeStateBtn('edit')" 
+        class="btn btn-primary">
+          Add item
+      </button>
+      <button v-else v-on:click="changeStateBtn('default')" 
+        class="btn btn-cancel">
+          Cancel
+      </button>
+    </div>
+    
+
+    <div v-if="state === 'edit'" class="add-item-form">
+      <input type="text" 
+        v-model="newItem" 
+        placeholder="Add a new item to purchase" 
+        v-on:keyup.enter="saveItem">
+      <button class="btn btn-primary" 
+        v-bind:disabled="newItem.length === 0" 
+        v-on:click="saveItem">
+          Save Item
+      </button>
+    </div>
+    
+    <ul>
+      <li class="list" 
+        v-for="item in reversedItems" 
+        v-bind:class="{strikeout: item.purchased}"
+        v-on:click="togglePurchased(item)">
+          {{ item.label }}
+      </li>
+    </ul>
+    <p v-if="items.length === 0">No more stuff for list to buy</p>
+  </div>
+
+
+  <script src="index.js"></script>
+</body>
+</html>

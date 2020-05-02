@@ -1,0 +1,53 @@
+body {
+    margin: 25px;
+    font-size: 20px;
+    line-height: 25px;
+}
+.list {
+    margin-top: 15px;
+    list-style-type: none;
+    margin-left: -35px;
+    font-size: 20px;
+    line-height: 25px;
+}
+input {
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    border-style: outset;
+    display: inline-block;
+}
+p {
+    display: inline-block;
+}
+.p-ml {
+    margin-left: 40px;
+}
+h2 {
+    display: inline-block;
+}
+.btn {
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    background-color: rgb(119, 150, 235);
+    border-radius: 5px;
+    border-style: none;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5)
+}
+.strikeout {
+    text-decoration: line-through;
+}
+.priority {
+    color: orange
+}
+.btn-primary {
+    margin-left: 25px;
+}
+.btn-cancel {
+    margin-left: 25px;
+    background-color: rgb(173, 24, 24);
+}
+.btn-primary:hover {
+    background-color: rgba(119, 150, 235, 0.8);
+}
